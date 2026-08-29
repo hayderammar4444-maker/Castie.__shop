@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Castle Shop | Gaming & Digital Store</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090d;
+    color:#f5f5f5;
+    font-family:Tahoma,Arial,sans-serif;
+    line-height:1.6;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1180px;
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,9,13,.94);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #242731;
+}
+
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:linear-gradient(145deg,#f4c65d,#b98524);
+    color:#161109;
+    font-size:23px;
+    box-shadow:0 8px 25px rgba(244,185,66,.12);
+}
+
+nav{
+    display:flex;
+    gap:5px;
+}
+
+nav a{
+    color:#969ba8;
+    padding:9px 13px;
+    border-radius:9px;
+    font-size:13px;
+}
+
+nav a:hover{
+    background:#171920;
+    color:#fff;
+}
+
+.social{
+    display:flex;
+    gap:7px;
+}
+
+.social a{
+    width:37px;
+    height:37px;
+    display:grid;
+    place-items:center;
+    border:1px solid #292d38;
+    border-radius:10px;
+    color:#aaa;
+    transition:.2s;
+}
+
+.social a:hover{
+    background:#f4b942;
+    color:#15120a;
+    border-color:#f4b942;
+}
+
+/* ================= ANNOUNCEMENT ================= */
+
+.announcement{
+    border-bottom:1px solid #292c36;
+    background:#111319;
+}
+
+.announcement-inner{
+    min-height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color:#aeb3bf;
+    font-size:12px;
+}
+
+.announcement strong{
+    color:#f4c65d;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:80px 0 55px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:35px;
+    align-items:center;
+}
+
+.tag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    color:#f4c65d;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:13px;
+}
+
+.tag::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#66d19e;
+    box-shadow:0 0 10px #66d19e;
+}
+
+.hero h1{
+    font-size:clamp(43px,6vw,72px);
+    line-height:1.04;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#f4c65d;
+}
+
+.hero-text{
+    color:#9ca2b1;
+    font-size:17px;
+    max-width:650px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:27px;
+}
+
+.btn{
+    border:1px solid #30343f;
+    background:#15171f;
+    color:#fff;
+    padding:13px 20px;
+    border-radius:11px;
+    transition:.2s;
+    font-size:13px;
+}
+
+.btn:hover{
+    background:#20232d;
+}
+
+.btn-main{
+    background:#f4b942;
+    color:#15120a;
+    border-color:#f4b942;
+    font-weight:bold;
+}
+
+.btn-main:hover{
+    background:#ffd36e;
+}
+
+/* HERO BOX */
+
+.hero-box{
+    background:
+    radial-gradient(circle at top right,rgba(244,185,66,.08),transparent 35%),
+    linear-gradient(145deg,#171920,#0e0f14);
+    border:1px solid #292d37;
+    border-radius:23px;
+    padding:25px;
+    box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+.hero-box-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.hero-box-title{
+    font-weight:bold;
+}
+
+.available{
+    color:#66d19e;
+    border:1px solid #28523f;
+    background:#102019;
+    padding:4px 9px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.stat{
+    background:#101117;
+    border:1px solid #252934;
+    border-radius:14px;
+    padding:17px;
+}
+
+.stat-icon{
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.stat b{
+    display:block;
+    font-size:14px;
+}
+
+.stat span{
+    color:#818795;
+    font-size:11px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:42px 0;
+}
+
+.section-title{
+    margin-bottom:22px;
+}
+
+.section-title h2{
+    font-size:30px;
+    margin-bottom:4px;
+}
+
+.section-title p{
+    color:#858b99;
+    font-size:13px;
+}
+
+/* ================= QUICK CATEGORIES ================= */
+
+.quick-categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-bottom:38px;
+}
+
+.quick-card{
+    background:#111319;
+    border:1px solid #282c36;
+    border-radius:15px;
+    padding:18px;
+    transition:.2s;
+    cursor:pointer;
+}
+
+.quick-card:hover{
+    transform:translateY(-3px);
+    border-color:#4a4f5c;
+    background:#15171e;
+}
+
+.quick-card-icon{
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.quick-card h3{
+    font-size:14px;
+}
+
+.quick-card p{
+    color:#777e8c;
+    font-size:11px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-tools{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.search{
+    flex:1;
+}
+
+.search input{
+    width:100%;
+    padding:14px 16px;
+    background:#111319;
+    color:#fff;
+    border:1px solid #292d37;
+    border-radius:12px;
+    outline:none;
+    font-size:13px;
+}
+
+.search input:focus{
+    border-color:#555b69;
+}
+
+.categories{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:4px 0 12px;
+}
+
+.category{
+    white-space:nowrap;
+    padding:9px 14px;
+    background:#111319;
+    color:#9298a5;
+    border:1px solid #292d37;
+    border-radius:10px;
+    font-size:12px;
+    transition:.2s;
+}
+
+.category:hover,
+.category.active{
+    background:#f4b942;
+    border-color:#f4b942;
+    color:#15120a;
+    font-weight:bold;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.card{
+    background:linear-gradient(180deg,#161820,#101117);
+    border:1px solid #292d37;
+    border-radius:17px;
+    padding:19px;
+    transition:.2s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#474d5a;
+}
+
+.card-badge{
+    position:absolute;
+    top:14px;
+    left:14px;
+    background:#171a21;
+    border:1px solid #30343e;
+    color:#f4c65d;
+    border-radius:20px;
+    padding:3px 8px;
+    font-size:9px;
+}
+
+.icon{
+    width:47px;
+    height:47px;
+    display:grid;
+    place-items:center;
+    background:#0c0e13;
+    border:1px solid #292d37;
+    border-radius:13px;
+    font-size:23px;
+}
+
+.card h3{
+    font-size:16px;
+    margin:12px 0 3px;
+}
+
+.card-description{
+    color:#858b99;
+    font-size:11px;
+    min-height:38px;
+}
+
+.price{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#0d0f14;
+    border:1px solid #1e222b;
+    border-radius:8px;
+    padding:8px 10px;
+    margin-top:7px;
+    font-size:11px;
+}
+
+.price strong{
+    color:#f4c65d;
+}
+
+.order{
+    width:100%;
+    margin-top:12px;
+    border:0;
+    padding:11px;
+    border-radius:9px;
+    background:#f4b942;
+    color:#17130a;
+    font-weight:bold;
+    font-size:12px;
+    transition:.2s;
+}
+
+.order:hover{
+    background:#ffd36e;
+}
+
+.empty{
+    display:none;
+    text-align:center;
+    color:#858b99;
+    border:1px dashed #30343e;
+    border-radius:15px;
+    padding:40px;
+    margin-top:10px;
+}
+
+/* ================= FEATURED ================= */
+
+.featured{
+    background:#0d0f14;
+    border-top:1px solid #20232c;
+    border-bottom:1px solid #20232c;
+}
+
+.featured-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    background:linear-gradient(110deg,#171920,#101117);
+    border:1px solid #2c303a;
+    border-radius:20px;
+    padding:25px;
+}
+
+.featured-label{
+    color:#f4c65d;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.featured h2{
+    font-size:24px;
+    margin:5px 0;
+}
+
+.featured p{
+    color:#858b99;
+    font-size:12px;
+}
+
+/* ================= WHY ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.info{
+    background:#12141b;
+    border:1px solid #292d37;
+    padding:22px;
+    border-radius:17px;
+}
+
+.info-icon{
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.info h3{
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.info p{
+    color:#858b99;
+    font-size:12px;
+}
+
+/* ================= PAYMENT CONTACT ================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.box{
+    background:#12141b;
+    border:1px solid #292d37;
+    padding:24px;
+    border-radius:18px;
+}
+
+.box h2{
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.note{
+    color:#858b99;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.contact-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:13px;
+    margin-top:9px;
+    background:#0d0f14;
+    border:1px solid #292d37;
+    border-radius:11px;
+    transition:.2s;
+}
+
+.contact-link:hover{
+    border-color:#4a4f5a;
+    background:#15171e;
+}
+
+.contact-link span{
+    color:#858b99;
+    font-size:11px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid #242731;
+    padding:30px 0;
+    color:#777d8a;
+    font-size:11px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.footer-brand{
+    color:#c2c6ce;
+    font-weight:bold;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(5px);
+    place-items:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:grid;
+}
+
+.modal-box{
+    width:min(500px,100%);
+    background:#12141b;
+    border:1px solid #353a46;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+.modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.modal-head h2{
+    font-size:20px;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#999;
+    font-size:28px;
+    line-height:1;
+}
+
+.close:hover{
+    color:#fff;
+}
+
+.modal-text{
+    color:#8f95a3;
+    font-size:12px;
+    margin:12px 0 18px;
+}
+
+.order-product{
+    background:#0d0f14;
+    border:1px solid #292d37;
+    border-radius:12px;
+    padding:13px;
+    margin-bottom:15px;
+}
+
+.order-product small{
+    color:#777e8b;
+    display:block;
+    font-size:10px;
+}
+
+.order-product strong{
+    display:block;
+    margin-top:3px;
+}
+
+.contact-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+}
+
+.contact-buttons a{
+    text-align:center;
+    padding:13px 5px;
+    background:#0d0f14;
+    border:1px solid #292d37;
+    border-radius:11px;
+    font-size:12px;
+    transition:.2s;
+}
+
+.contact-buttons a:hover{
+    background:#f4b942;
+    color:#15120a;
+    border-color:#f4b942;
+}
+
+/* ================= CART ================= */
+
+.cart-button{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    z-index:1500;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid #f4b942;
+    background:#f4b942;
+    color:#17130a;
+    font-size:22px;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.cart-count{
+    position:absolute;
+    top:-4px;
+    right:-4px;
+    width:20px;
+    height:20px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#ef6262;
+    color:#fff;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.cart-panel{
+    position:fixed;
+    left:20px;
+    bottom:85px;
+    z-index:1499;
+    width:min(360px,calc(100% - 40px));
+    max-height:70vh;
+    overflow:auto;
+    display:none;
+    background:#12141b;
+    border:1px solid #343945;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+.cart-panel.show{
+    display:block;
+}
+
+.cart-panel h3{
+    margin-bottom:12px;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    background:#0d0f14;
+    border:1px solid #252934;
+    border-radius:10px;
+    padding:10px;
+    margin-top:7px;
+}
+
+.cart-item-name{
+    font-size:11px;
+}
+
+.remove-item{
+    border:0;
+    background:none;
+    color:#e57474;
+    font-size:16px;
+}
+
+.cart-empty{
+    color:#858b99;
+    font-size:12px;
+    text-align:center;
+    padding:20px 0;
+}
+
+.cart-actions{
+    margin-top:15px;
+    display:grid;
+    gap:8px;
+}
+
+.cart-actions button,
+.cart-actions a{
+    width:100%;
+    text-align:center;
+    padding:10px;
+    border-radius:9px;
+    border:1px solid #30343f;
+    background:#171920;
+    color:#fff;
+    font-size:11px;
+}
+
+.cart-actions .checkout{
+    background:#f4b942;
+    border-color:#f4b942;
+    color:#17130a;
+    font-weight:bold;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .quick-categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+@media(max-width:580px){
+
+    .container{
+        width:94%;
+    }
+
+    .hero{
+        padding:55px 0 35px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-1px;
+    }
+
+    .hero-text{
+        font-size:14px;
+    }
+
+    .buttons{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+
+    .btn{
+        text-align:center;
+        width:100%;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .quick-categories{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .featured-box{
+        display:block;
+    }
+
+    .featured-box .btn{
+        margin-top:15px;
+    }
+
+    .footer-inner{
+        display:block;
+    }
+
+    .social{
+        display:none;
+    }
+
+    .contact-buttons{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container nav">
+
+<a href="#home" class="logo">
+<div class="logo-icon">🏰</div>
+<span>Castle Shop</span>
+</a>
+
+<nav>
+<a href="#products">المنتجات</a>
+<a href="#why">مميزاتنا</a>
+<a href="#contact">التواصل</a>
+</nav>
+
+<div class="social">
+
+<a href="https://t.me/castle_shop9" target="_blank" rel="noopener">✈️</a>
+
+<a href="https://www.instagram.com/castle.__shop?igsi=d20yd211eDk3cXYz" target="_blank" rel="noopener">◎</a>
+
+<a href="https://www.facebook.com/share/14oeHSPjHZ2/?mibextid=wwXIfr" target="_blank" rel="noopener">f</a>
+
+</div>
+
+</div>
+</header>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="announcement">
+
+<div class="container announcement-inner">
+
+<span>⚡</span>
+
+<strong>Castle Shop</strong>
+
+<span>Gaming • Digital • Gift Cards • Subscriptions</span>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<main id="home">
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="tag">
+GAMING • DIGITAL • GIFT CARDS
+</div>
+
+<h1>
+Castle Shop<br>
+<span>كل عالمك الرقمي.</span>
+</h1>
+
+<p class="hero-text">
+متجر للمنتجات والخدمات الرقمية والألعاب.
+اختار المنتج، شوف السعر، وأرسل طلبك مباشرة.
+</p>
+
+<div class="buttons">
+
+<a href="#products" class="btn btn-main">
+تصفح المنتجات
+</a>
+
+<a href="#contact" class="btn">
+طرق الدفع والتواصل
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-box">
+
+<div class="hero-box-top">
+
+<div class="hero-box-title">
+Castle Shop
+</div>
+
+<div class="available">
+● متوفر للطلب
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-icon">🎮</div>
+<b>Gaming</b>
+<span>ألعاب وشحن وخدمات</span>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🎫</div>
+<b>Gift Cards</b>
+<span>بطاقات متعددة الريجنات</span>
+</div>
+
+<div class="stat">
+<div class="stat-icon">📺</div>
+<b>Subscriptions</b>
+<span>اشتراكات رقمية</span>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🌍</div>
+<b>Regions</b>
+<span>مناطق متعددة</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK CATEGORIES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>تصفح حسب القسم</h2>
+
+<p>
+اختار القسم حتى توصل للمنتج أسرع.
+</p>
+
+</div>
+
+<div class="quick-categories">
+
+<div class="quick-card" onclick="selectCategory('Gaming')">
+<div class="quick-card-icon">🎮</div>
+<h3>Gaming</h3>
+<p>ألعاب وشحن وخدمات</p>
+</div>
+
+<div class="quick-card" onclick="selectCategory('Gift Cards')">
+<div class="quick-card-icon">🎫</div>
+<h3>Gift Cards</h3>
+<p>بطاقات وشحن رقمي</p>
+</div>
+
+<div class="quick-card" onclick="selectCategory('Subscriptions')">
+<div class="quick-card-icon">📺</div>
+<h3>Subscriptions</h3>
+<p>اشتراكات رقمية</p>
+</div>
+
+<div class="quick-card" onclick="selectCategory('Services')">
+<div class="quick-card-icon">⚙️</div>
+<h3>Services</h3>
+<p>خدمات رقمية متنوعة</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>المنتجات</h2>
+
+<p>
+ابحث عن المنتج أو اختار القسم.
+</p>
+
+</div>
+
+<div class="products-tools">
+
+<div class="search">
+
+<input
+id="search"
+type="search"
+placeholder="🔎 ابحث عن PUBG أو PlayStation أو Netflix..."
+autocomplete="off"
+>
+
+</div>
+
+</div>
+
+<div class="categories" id="categories"></div>
+
+<div class="products" id="productsList"></div>
+
+<div class="empty" id="empty">
+ما لقينا منتج مطابق للبحث.
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURED -->
+
+<section class="featured">
+
+<div class="container">
+
+<div class="featured-box">
+
+<div>
+
+<div class="featured-label">
+🔥 FEATURED
+</div>
+
+<h2>
+Xbox Game Pass Ultimate
+</h2>
+
+<p>
+شهر، شهرين، 75 يوم ومدد أكثر حسب الطلب.
+</p>
+
+</div>
+
+<button
+class="btn btn-main"
+onclick="openOrderByName('Xbox Game Pass Ultimate')"
+>
+اطلب الآن
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+
+<section id="why">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>ليش Castle Shop؟</h2>
+
+<p>
+خدمات ومنتجات رقمية بمكان واحد.
+</p>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info">
+
+<div class="info-icon">⚡</div>
+
+<h3>
+طلب مباشر
+</h3>
+
+<p>
+اختار المنتج واضغط اطلب الآن حتى تتواصل ويانا مباشرة.
+</p>
+
+</div>
+
+<div class="info">
+
+<div class="info-icon">🌍</div>
+
+<h3>
+ريجنات متعددة
+</h3>
+
+<p>
+بطاقات ومنتجات لمناطق مختلفة حول العالم.
+</p>
+
+</div>
+
+<div class="info">
+
+<div class="info-icon">💳</div>
+
+<h3>
+طرق دفع
+</h3>
+
+<p>
+تحويل Mastercard مصرف الرافدين ورصيد AsiaCell.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container contact-grid">
+
+<div class="box">
+
+<h2>
+تواصل ويانا
+</h2>
+
+<p class="note">
+للشراء والاستفسار عن المنتجات والأسعار حسب الطلب، تواصل معنا.
+</p>
+
+<a
+class="contact-link"
+href="https://t.me/castle_shop9"
+target="_blank"
+rel="noopener"
+>
+
+<strong>✈️ Telegram</strong>
+
+<span>فتح القناة</span>
+
+</a>
+
+<a
+class="contact-link"
+href="https://www.instagram.com/castle.__shop?igsi=d20yd211eDk3cXYz"
+target="_blank"
+rel="noopener"
+>
+
+<strong>◎ Instagram</strong>
+
+<span>فتح الحساب</span>
+
+</a>
+
+<a
+class="contact-link"
+href="https://www.facebook.com/share/14oeHSPjHZ2/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener"
+>
+
+<strong>f Facebook</strong>
+
+<span>فتح الصفحة</span>
+
+</a>
+
+</div>
+
+<div class="box">
+
+<h2>
+طرق الدفع
+</h2>
+
+<div class="contact-link">
+
+<strong>💳 Mastercard</strong>
+
+<span>مصرف الرافدين</span>
+
+</div>
+
+<div class="contact-link">
+
+<strong>📱 AsiaCell</strong>
+
+<span>رصيد</span>
+
+</div>
+
+<p class="note" style="margin-top:15px;">
+الأسعار المعروضة بالدينار العراقي ما لم يُذكر غير ذلك.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<span class="footer-brand">© 2026 Castle Shop</span>
+<br>
+Gaming & Digital Store
+</div>
+
+<div>
+Gaming • Gift Cards • Subscriptions
+</div>
+
+</div>
+
+</footer>
+
+<!-- ORDER MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+
+<h2>
+طلب المنتج
+</h2>
+
+<button
+class="close"
+onclick="closeModal()"
+>
+×
+</button>
+
+</div>
+
+<p class="modal-text">
+اختار طريقة التواصل وأرسل اسم المنتج والكمية أو الفئة المطلوبة.
+</p>
+
+<div class="order-product">
+
+<small>
+المنتج المختار
+</small>
+
+<strong id="modalProduct">
+-
+</strong>
+
+</div>
+
+<div class="contact-buttons">
+
+<a
+href="https://t.me/castle_shop9"
+target="_blank"
+rel="noopener"
+>
+✈️<br>
+Telegram
+</a>
+
+<a
+href="https://www.instagram.com/castle.__shop?igsi=d20yd211eDk3cXYz"
+target="_blank"
+rel="noopener"
+>
+◎<br>
+Instagram
+</a>
+
+<a
+href="https://www.facebook.com/share/14oeHSPjHZ2/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener"
+>
+f<br>
+Facebook
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CART BUTTON -->
+
+<button
+class="cart-button"
+onclick="toggleCart()"
+title="السلة"
+>
+🛒
+
+<span
+class="cart-count"
+id="cartCount"
+>
+0
+</span>
+
+</button>
+
+<!-- CART PANEL -->
+
+<div
+class="cart-panel"
+id="cartPanel"
+>
+
+<h3>
+🛒 طلباتي
+</h3>
+
+<div id="cartItems"></div>
+
+<div class="cart-actions">
+
+<button
+onclick="clearCart()"
+>
+مسح الطلبات
+</button>
+
+<a
+class="checkout"
+id="cartTelegram"
+href="https://t.me/castle_shop9"
+target="_blank"
+rel="noopener"
+>
+إرسال الطلب عبر Telegram
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+const products = [
+
+{
+cat:"Gaming",
+icon:"🎯",
+name:"PUBG Mobile UC",
+desc:"شحن شدات PUBG Mobile",
+prices:[
+["60 شدة","1,500 د.ع"],
+["120 شدة","2,800 د.ع"],
+["180 شدة","4,000 د.ع"],
+["336 شدة","7,000 د.ع"],
+["688 شدة","13,500 د.ع"],
+["1170 شدة","23,000 د.ع"]
+],
+featured:true
+},
+
+{
+cat:"Gift Cards",
+icon:"🎮",
+name:"Xbox Gift Card — تركي",
+desc:"بطاقات Xbox التركية",
+prices:[
+["25 ليرة","1,500 د.ع"],
+["50 ليرة","2,800 د.ع"],
+["100 ليرة","5,000 د.ع"],
+["300 ليرة","13,000 د.ع"],
+["كميات أخرى","حسب الطلب"]
+]
+},
+
+{
+cat:"Microsoft",
+icon:"🪟",
+name:"Microsoft Account — USA",
+desc:"Account with card linked",
+prices:[
+["الحساب","2,000 د.ع"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🎮",
+name:"PlayStation Gift Card — USA",
+desc:"بطاقات PlayStation الأمريكية",
+prices:[
+["$5","8,000 د.ع"],
+["$10","14,500 د.ع"],
+["$25","36,000 د.ع"],
+["$50","69,500 د.ع"],
+["$75","104,000 د.ع"],
+["$100","140,000 د.ع"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🎮",
+name:"PlayStation Gift Card — Saudi",
+desc:"بطاقات PlayStation السعودية",
+prices:[
+["$10","15,500 د.ع"],
+["$20","30,000 د.ع"],
+["$40","59,000 د.ع"],
+["$60","88,500 د.ع"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🎮",
+name:"PlayStation Gift Card — UAE",
+desc:"بطاقات PlayStation الإماراتية",
+prices:[
+["$10","15,500 د.ع"],
+["$20","30,000 د.ع"],
+["$50","73,500 د.ع"],
+["$100","144,000 د.ع"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🌍",
+name:"PlayStation — Regions أخرى",
+desc:"تركي، ألماني، كويتي، بحريني، قطري، كندي، عماني، بريطاني، ياباني، إسباني، بولندي",
+prices:[
+["السعر","راسلونا"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🟦",
+name:"Steam Wallet",
+desc:"عملات Steam — جميع الريجنات",
+prices:[
+["السعر","حسب الريجن والفئة"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🟢",
+name:"Razer Gold Pins",
+desc:"متوفر حسب الطلب",
+prices:[
+["السعر","حسب الفئة والريجن"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎲",
+name:"Yalla Ludo",
+desc:"Diamonds & Gold",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🟥",
+name:"Roblox",
+desc:"Robux",
+prices:[
+["السعر","حسب الكمية"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🔥",
+name:"Free Fire",
+desc:"شحن جواهر",
+prices:[
+["السعر","حسب الكمية"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🎮",
+name:"Nintendo",
+desc:"بطاقات Nintendo",
+prices:[
+["السعر","حسب الفئة والريجن"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"⛏️",
+name:"Minecraft",
+desc:"Minecraft Codes / Services",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎯",
+name:"Call of Duty — Black Ops Cold War",
+desc:"اللعبة حسب الريجن",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎯",
+name:"Call of Duty — Modern Warfare",
+desc:"اللعبة حسب الريجن",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎯",
+name:"Call of Duty — Modern Warfare 2",
+desc:"اللعبة حسب الريجن",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🛡️",
+name:"Overwatch 2",
+desc:"خدمات حسب الريجن",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎮",
+name:"EA Games — PC & Xbox",
+desc:"ألعاب EA للـ PC و Xbox",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🟣",
+name:"Fortnite",
+desc:"V-Bucks وعروض حسب الطلب",
+prices:[
+["السعر","حسب الكمية والريجن"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"⚽️",
+name:"FC Mobile",
+desc:"FC Points / شحن",
+prices:[
+["السعر","حسب الكمية"]
+]
+},
+
+{
+cat:"Gaming",
+icon:"🎲",
+name:"Ludo Club",
+desc:"شحن وعملات",
+prices:[
+["السعر","حسب الكمية"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"🍎",
+name:"Apple Gift Cards",
+desc:"متوفرة حسب الريجن والفئة",
+prices:[
+["السعر","حسب الطلب"]
+]
+},
+
+{
+cat:"Gift Cards",
+icon:"▶️",
+name:"Google Play",
+desc:"بطاقات Google Play",
+prices:[
+["السعر","حسب الريجن والفئة"]
+]
+},
+
+{
+cat:"Services",
+icon:"📡",
+name:"شبكة نجوم الرابعة",
+desc:"خدمة متوفرة حسب الطلب",
+prices:[
+["التفاصيل","راسلونا"]
+]
+},
+
+{
+cat:"Services",
+icon:"🎮",
+name:"المنصة",
+desc:"خدمة متوفرة حسب الطلب",
+prices:[
+["التفاصيل","راسلونا"]
+]
+},
+
+{
+cat:"Subscriptions",
+icon:"📺",
+name:"MBC شاهد",
+desc:"اشتراكات شاهد",
+prices:[
+["الباقات","حسب الطلب"]
+]
+},
+
+{
+cat:"Services",
+icon:"🎮",
+name:"1001",
+desc:"خدمة متوفرة حسب الطلب",
+prices:[
+["التفاصيل","راسلونا"]
+]
+},
+
+{
+cat:"Subscriptions",
+icon:"🎮",
+name:"Xbox Game Pass Ultimate",
+desc:"اشتراكات Game Pass Ultimate",
+prices:[
+["شهر","20,000 د.ع"],
+["شهرين","23,000 د.ع"],
+["75 يوم","28,000 د.ع"],
+["مدد أكثر","حسب الطلب"]
+],
+featured:true
+},
+
+{
+cat:"Subscriptions",
+icon:"🎬",
+name:"Netflix Premium",
+desc:"اشتراكات Netflix Premium",
+prices:[
+["شهر","$7"],
+["شهرين","$13"],
+["3 أشهر","$17"],
+["6 أشهر","$28"],
+["12 شهر","$48"]
+],
+featured:true
+}
+
+];
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let activeCategory = "الكل";
+
+let cart = [];
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+function buildCategories(){
+
+    const categories = [
+        "الكل",
+        ...new Set(products.map(product => product.cat))
+    ];
+
+    const container = document.getElementById("categories");
+
+    container.innerHTML = "";
+
+    categories.forEach(category => {
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "category" +
+            (category === activeCategory ? " active" : "");
+
+        button.textContent = category;
+
+        button.addEventListener("click", () => {
+
+            activeCategory = category;
+
+            buildCategories();
+
+            showProducts();
+
+        });
+
+        container.appendChild(button);
+
+    });
+
+}
+
+
+/* =========================================================
+   SELECT CATEGORY
+========================================================= */
+
+function selectCategory(category){
+
+    activeCategory = category;
+
+    buildCategories();
+
+    showProducts();
+
+    document.getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   SHOW PRODUCTS
+========================================================= */
+
+function showProducts(){
+
+    const query =
+        document.getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const filtered = products.filter(product => {
+
+        const searchableText =
+            product.name +
+            " " +
+            product.desc +
+            " " +
+            product.cat +
+            " " +
+            product.prices.flat().join(" ");
+
+        const categoryMatch =
+            activeCategory === "الكل" ||
+            product.cat === activeCategory;
+
+        const searchMatch =
+            !query ||
+            searchableText
+                .toLowerCase()
+                .includes(query);
+
+        return categoryMatch && searchMatch;
+
+    });
+
+
+    const list =
+        document.getElementById("productsList");
+
+    list.innerHTML = "";
+
+
+    filtered.forEach(product => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "card";
+
+
+        if(product.featured){
+
+            const badge =
+                document.createElement("div");
+
+            badge.className = "card-badge";
+
+            badge.textContent = "مميز";
+
+            card.appendChild(badge);
+
+        }
+
+
+        const icon =
+            document.createElement("div");
+
+        icon.className = "icon";
+
+        icon.textContent = product.icon;
+
+        card.appendChild(icon);
+
+
+        const title =
+            document.createElement("h3");
+
+        title.textContent = product.name;
+
+        card.appendChild(title);
+
+
+        const description =
+            document.createElement("div");
+
+        description.className =
+            "card-description";
+
+        description.textContent =
+            product.desc;
+
+        card.appendChild(description);
+
+
+        product.prices.forEach(price => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "price";
+
+
+            const label =
+                document.createElement("span");
+
+            label.textContent = price[0];
+
+
+            const value =
+                document.createElement("strong");
+
+            value.textContent = price[1];
+
+
+            row.appendChild(label);
+
+            row.appendChild(value);
+
+            card.appendChild(row);
+
+        });
+
+
+        const order =
+            document.createElement("button");
+
+        order.type = "button";
+
+        order.className = "order";
+
+        order.textContent = "اطلب الآن";
+
+
+        order.addEventListener("click", () => {
+
+            openOrder(product);
+
+        });
+
+
+        card.appendChild(order);
+
+
+        const cartBtn =
+            document.createElement("button");
+
+        cartBtn.type = "button";
+
+        cartBtn.className = "order";
+
+        cartBtn.style.background = "#171920";
+
+        cartBtn.style.color = "#fff";
+
+        cartBtn.style.border = "1px solid #30343f";
+
+        cartBtn.textContent = "🛒 أضف للطلب";
+
+
+        cartBtn.addEventListener("click", () => {
+
+            addToCart(product.name);
+
+        });
+
+
+        card.appendChild(cartBtn);
+
+
+        list.appendChild(card);
+
+    });
+
+
+    document.getElementById("empty").style.display =
+        filtered.length
+        ? "none"
+        : "block";
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+document
+    .getElementById("search")
+    .addEventListener("input", showProducts);
+
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+function openOrder(product){
+
+    document.getElementById("modalProduct")
+        .textContent = product.name;
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("show");
+
+}
+
+
+function openOrderByName(name){
+
+    const product =
+        products.find(
+            item => item.name === name
+        );
+
+    if(product){
+
+        openOrder(product);
+
+    }
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList
+        .remove("show");
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL OUTSIDE
+========================================================= */
+
+document
+    .getElementById("modal")
+    .addEventListener("click", function(event){
+
+        if(event.target === this){
+
+            closeModal();
+
+        }
+
+    });
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+function addToCart(productName){
+
+    cart.push(productName);
+
+    updateCart();
+
+    document
+        .getElementById("cartPanel")
+        .classList
+        .add("show");
+
+}
+
+
+function removeFromCart(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+function clearCart(){
+
+    cart = [];
+
+    updateCart();
+
+}
+
+
+function updateCart(){
+
+    const count =
+        document.getElementById("cartCount");
+
+    count.textContent = cart.length;
+
+
+    const container =
+        document.getElementById("cartItems");
+
+
+    if(cart.length === 0){
+
+        container.innerHTML =
+            '<div class="cart-empty">ماكو منتجات بالطلب حالياً.</div>';
+
+    }else{
+
+        container.innerHTML = "";
+
+        cart.forEach((product,index) => {
+
+            const item =
+                document.createElement("div");
+
+            item.className = "cart-item";
+
+
+            const name =
+                document.createElement("div");
+
+            name.className =
+                "cart-item-name";
+
+            name.textContent =
+                product;
+
+
+            const remove =
+                document.createElement("button");
+
+            remove.className =
+                "remove-item";
+
+            remove.textContent = "×";
+
+
+            remove.addEventListener(
+                "click",
+                () => removeFromCart(index)
+            );
+
+
+            item.appendChild(name);
+
+            item.appendChild(remove);
+
+            container.appendChild(item);
+
+        });
+
+    }
+
+
+    updateTelegramLink();
+
+}
+
+
+function updateTelegramLink(){
+
+    const message =
+        cart.length
+        ? "مرحبا Castle Shop، أريد طلب:%0A%0A" +
+          cart
+            .map((item,index) =>
+                (index + 1) + ". " + item
+            )
+            .join("%0A")
+        : "مرحبا Castle Shop، أريد الاستفسار عن المنتجات.";
+
+    const url =
+        "https://t.me/castle_shop9?text=" +
+        encodeURIComponent(
+            message.replaceAll("%0A","\n")
+        );
+
+    document
+        .getElementById("cartTelegram")
+        .href = url;
+
+}
+
+
+function toggleCart(){
+
+    document
+        .getElementById("cartPanel")
+        .classList
+        .toggle("show");
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+buildCategories();
+
+showProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
